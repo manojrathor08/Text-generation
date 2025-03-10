@@ -10,6 +10,11 @@ app = FastAPI(title="Text Generation API")
 model_name = "gpt2"
 generator = pipeline('text-generation', model=model_name)
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the Text Generation API! Use /generate to generate text."}
+
+
 class PromptRequest(BaseModel):
     prompt: str
     max_length: int = 200  # Default max length for generated text
