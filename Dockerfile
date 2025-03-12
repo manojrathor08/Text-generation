@@ -17,11 +17,6 @@ COPY requirements.txt .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Pre-download the model to avoid first-request delay
-RUN python -c "from transformers import AutoTokenizer, AutoModelForCausalLM; \
-    tokenizer = AutoTokenizer.from_pretrained('gpt2'); \
-    model = AutoModelForCausalLM.from_pretrained('gpt2')"
-
 # Copy application code
 COPY app.py .
 
