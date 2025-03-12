@@ -15,10 +15,10 @@ This service provides an HTTP API endpoint that accepts text prompts and returns
 
 ### Building and Running
 
-#### Build the Docker image:
+#### Pull the Docker image:
 
 ```bash
-docker build -t text-generation-service .
+docker pull manojrathor08/text-generation-service
 ```
 
 #### Run the container:
@@ -31,14 +31,6 @@ The API will be available at http://localhost:8000.
 
 Access the Swagger UI at: `http://localhost:8000/docs`
 
-#### Loading a Pre-Built Docker Image
-
-If you have a saved Docker image file (text-generation-service.tar):
-
-```bash
-docker load -i text-generation-service.tar
-docker run -p 8000:8000 text-generation-service
-```
 
 ## API Usage
 
